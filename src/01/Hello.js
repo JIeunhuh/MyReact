@@ -1,13 +1,15 @@
 import logo from '../logo.svg';
-import './Hello.css';
+import '../App.css';
+import MyClockImage from '../02/MyClockImage';
 //react component의 기본 구조
 const Hello = ()=>{ //사용자 정의태그는 반드시 return() method가 있어야 함
   let name = '허지은';
   let git = 'https://github.com/JIeunhuh';
     return(
       <main className='container'>
-      <article data-theme='dark'>
+      <article data-theme='dark' className='App'>
         <img src={logo} className='App-logo' alt='logo'/>
+        <MyClockImage/>
         <footer>
           <hgroup>
             <h1>{name}</h1>
