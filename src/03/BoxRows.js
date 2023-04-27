@@ -21,7 +21,7 @@ const BoxRows = ({ mv }) => { //{} 이용해서 box에 있는 data 바로 가져
                 <td>{row.rank}</td>
                 <td>{row.movieNm}</td>
                 <td>{parseInt(row.salesAmt).toLocaleString()}원</td>
-                <td>{icon} {Math.abs(inten)}</td> 
+                <td>{(inten === 0?' ':icon)} {(inten === 0?'':Math.abs(inten))}</td> 
 
             </tr>);
     }
@@ -31,5 +31,5 @@ const BoxRows = ({ mv }) => { //{} 이용해서 box에 있는 data 바로 가져
             {trTags}
         </>
     );
-}
+}//삼항 연산자로 순위 변동 없으면 아이콘, 숫자 둘다 안나오게 함
 export default BoxRows;
