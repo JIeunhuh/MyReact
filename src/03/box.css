@@ -1,0 +1,51 @@
+article {
+    background-color: rgb(255, 225, 230);
+    font-family: 'Bruno Ace SC', cursive;
+}
+
+h1 {
+    margin-left: 10px;
+    font-family: 'Bruno Ace SC', cursive;
+    padding: 0px;
+    background-color: rgb(255, 225, 230);
+    text-align: left;
+    color: rgb(13, 47, 92);
+    font-size: 80px;
+}
+
+table {
+    border: 2px solid;
+    border-color: rgb(13, 47, 92);
+    background-color: rgb(255, 225, 230);
+}
+
+thead {
+    height: 60px;
+}
+
+thead th {
+    font-weight: bold;
+    color: rgb(13, 47, 92);
+}
+
+tbody td {
+    
+    font-size: 17px;
+    border: 2px solid;
+    border-color: rgb(13, 47, 92);
+}
+
+tfoot>tr {
+    height: 50px;
+
+}
+
+tfoot td {
+    color: rgb(13, 47, 92);
+    font-size: 16px;
+    font-weight: bolder;
+
+}
+.font{
+    font-family: 'Sunflower', sans-serif;
+}
