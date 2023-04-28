@@ -1,0 +1,65 @@
+*{
+    font-family: 'Sunflower', sans-serif;
+}
+h1{
+    font-weight : bolder; 
+    color: rgb(110, 96, 110);
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Sunflower', sans-serif;
+    text-align: center;
+}
+
+.tb1{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 8%;
+    border-color: aliceblue;
+    background-color: aliceblue;
+    font-weight: bold;
+    color: rgb(46, 59, 87);
+}
+.tb2{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 8%;
+    border-color: rgb(170, 170, 255);
+    background-color: rgb(170, 170, 255);
+    font-weight: bold;
+    color: whitesmoke;
+}
+.tb1:hover{
+    border-color: rgb(170, 170, 255);
+    background-color: rgb(170, 170, 255);
+    color: whitesmoke;
+}
+.weather{
+    margin-top: 40px;
+
+}
+.w1{
+    margin-top: 40px;
+    color:  grey;
+    font-weight: bolder;
+}
+.w2{
+
+    font-weight: bolder;
+    color: rgb(170, 170, 255);
+}
+.w3{
+    font-weight: bolder;
+    color: rgb(170, 255, 181);
+}
+.w4{
+    color: rgb(255, 170, 203);
+    font-weight: bolder;
+}
