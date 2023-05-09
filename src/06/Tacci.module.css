@@ -1,0 +1,25 @@
+button{
+    background-color: pink;
+    border: 2px solid;
+    border-color:  rgb(46, 45, 45);
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+}
+h1{
+    color: rgb(46, 45, 45);
+    font-size: 30px;
+}
+article{
+    background-color: rgb(250, 162, 177);
+}
+button:hover{
+
+    background-color: rgb(255, 94, 121);
+    color: whitesmoke;
+}
+div{
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+}

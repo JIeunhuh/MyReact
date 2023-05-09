@@ -2,11 +2,14 @@ import Taccidentdata from './dataTaccident.json';
 import Taccident_nav1 from './Taccident_nav1';
 import Taccident_nav2 from './Taccident_nav2';
 import { useState, useEffect } from "react";
+import Taccident_nav3 from './Taccident_nav3';
+import style from './Tacci.module.css';
+
 const Taccident = () => {
     const data1 = Taccidentdata['data'];
     let category = data1.map((item) => (item.사고유형_대분류));
     let category2 = data1.map((item) => [item.사고유형_대분류, item.사고유형_중분류]);
-//.map() 이용
+    //.map() 이용
     //for of 이용
     // for (let item of data1) {
     //    let temp =[];
@@ -31,7 +34,7 @@ const Taccident = () => {
     useEffect(() => {
         console.log('Taccident sel2', sel2);
         let temp = data1.filter((item) => item.사고유형_대분류 === sel2[0] && item.사고유형_중분류 === sel2[1]);
-        setSelData(temp);
+        setSelData(temp[0]);
     }, [sel2]);
     useEffect(() =>
         console.log('Taccident sel2', selData), [selData]);
@@ -39,9 +42,10 @@ const Taccident = () => {
         <main className='container'>
             <article>
                 <Taccident_nav1 c1={category} sel1={sel1} setSel1={setSel1} />
-                <Taccident_nav2 c2={category2}  sel2={sel2} sel1={sel1} setSel1={setSel1} setSel2={setSel2} selData={selData} setSelData3={setSelData}/>
-          
+                <Taccident_nav2 c2={category2} sel2={sel2} sel1={sel1} setSel1={setSel1} setSel2={setSel2} selData={selData} setSelData3={setSelData} />
+                {selData && <Taccident_nav3 selData={selData}/>}
             </article>
+            
         </main>
 
     );

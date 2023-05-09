@@ -1,20 +1,11 @@
-const Taccident_nav3 = ({ c2, sel1, setSel1, sel2, setSel2,setSel3,sel3 }) => {
-    //console.log(c2);
-    let bt_tag2arr = c2.filter((item)=>item[0]===sel1);
-    const bt_tag3 = bt_tag2arr.map((item) =><li key={item}><button onClick={()=>{setSel2(item)}}>{item[1]}</button></li>);
+const Taccident_nav3 = ({selData}) => {
+   
+   
+    const tagKey = ['사고건수', '사망자수', '중상자수', '경상자수', '부상신고자수'];
 
-
-
-
-
+    let detail = tagKey.map((item, idx) => <div key={'k' + idx}>{item} {selData[item]}</div>)
     return (
-
-        <nav>
-            <ul>
-                {bt_tag3}
-            </ul>
-        </nav>
-
+        <div className="grid">{detail}</div>
     );
 }
 export default Taccident_nav3;
