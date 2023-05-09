@@ -5,7 +5,7 @@ const BoxRows_1 = ({ mv }) => { //{} 이용해서 box에 있는 data 바로 가�
     //const mvList= [...probs.mv]; //spread 연산자(받은 배열을 펼쳐 놓는거?)
     //console.log("boxrows", mv);
     let trTags = [];
-    const[footTag,setfootTag] = useState('');
+    const[footTag,setfootTag] = useState('영화를 선택하세요 :');
    //클릭된 자료확인
     const showMv = (row) => {
         console.log(row)
@@ -39,10 +39,10 @@ const BoxRows_1 = ({ mv }) => { //{} 이용해서 box에 있는 data 바로 가�
             <tbody>
                 {trTags}
             </tbody>
-            <tfoot><tr>
+            <tr className="tfoot">
                 <td colSpan={4} className="font">{footTag}</td>
             </tr>
-            </tfoot>
+            
         </>
     );
 }//삼항 연산자로 순위 변동 없으면 아이콘, 숫자 둘다 안나오게 함

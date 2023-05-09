@@ -19,11 +19,13 @@ table {
     background-color: rgb(255, 225, 230);
 }
 
-thead {
-    height: 60px;
+.thead {
+    height: 70px;
+    color : rgb(13, 47, 92);
 }
 
-thead th {
+.thead th {
+    font-size: 23px;
     font-weight: bold;
     color: rgb(13, 47, 92);
 }
@@ -35,12 +37,12 @@ tbody td {
     border-color: rgb(13, 47, 92);
 }
 
-tfoot>tr {
+.tfoot>tr {
     height: 50px;
 
 }
 
-tfoot td {
+.tfoot td {
     color: rgb(13, 47, 92);
     font-size: 16px;
     font-weight: bolder;
@@ -48,4 +50,11 @@ tfoot td {
 }
 .font{
     font-family: 'Sunflower', sans-serif;
+    font-weight: bolder;
+}
+.date{
+    font-family: 'Sunflower', sans-serif;
+}
+input:focus{
+    background-color: azure;
 }
