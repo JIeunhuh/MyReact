@@ -15,7 +15,7 @@ const GallaryList = ({ gList }) => {
 
         tags.push(
             
-            <article className="grid">
+            <article >
                 <head className="grid"><h1>{row.galTitle}</h1><h4>{row.galPhotographyLocation}</h4></head>
                 <body><img src={row.galWebImageUrl}></img></body>
                 <footer><div className={style.kwtag}>{temp}</div></footer>
