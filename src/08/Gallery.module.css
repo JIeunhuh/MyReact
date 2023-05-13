@@ -1,7 +1,44 @@
+*{
+    font-family: 'Sunflower', sans-serif;
+}
+.h1{
+    font-size: 30px;
+    color: rgb(186, 66, 112);
+    font-family: 'Sunflower', sans-serif;
+    font-weight: bold;
+
+}
 .but{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 80%;
     margin-left: 10%;
+    background-color: rgb(255, 170, 203);
+    border: 0px;
+    font-size: 25px;
+}
+.gv{
+    font-family: 'Sunflower', sans-serif; 
 }
 
+.kwtag{
+
+    background-color: rgb(170, 170, 255);
+    margin-right: 10px;
+    padding: 1px;
+    border: 2px solid;
+    border-radius: 10%;
+    border-color: rgb(170, 170, 255);
+    color: rgb(53, 53, 101);
+
+
+
+}
+.two{
+    display: flex;
+}
+.view{
+    margin: 10px;
+}
