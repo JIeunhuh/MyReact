@@ -29,7 +29,7 @@ const GallaryList = ({ gList }) => {
 
     }
     //tags 화면에 두개씩 출력하게 하기
-    //tags2()함수 만들어서 tags.map해서 배열로 가져옴
+    //tags2 새로 정의해서 tags.map해서 배열로 가져옴
     const tags2 = tags.map((item, index) => {
         if (index % 2 === 0) { //index가 2로 나누어떨어지면 {item},그 다음{item} 가져옴(index+1번째)
             return (<div className={style.two} key={index}>
