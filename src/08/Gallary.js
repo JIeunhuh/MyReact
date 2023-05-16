@@ -10,7 +10,9 @@ const Gallary = () => {
 
         txt.current.focus();
     }, [])
-
+    useEffect(() => {
+        console.log("useEffect",gList);
+    }, [gList])
 
     //등록버튼 onclick
     const showImg = (e) => {
@@ -19,6 +21,7 @@ const Gallary = () => {
         console.log(txt.current.value + ' ' + kw);
         let url = 'https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?serviceKey=2cTsIbMSNEakGj3HNSZtwQLbXXeuyM8AuaNHrr3dKA3L5Xi5w%2F0U6Rs3CwSIjl0DbsffGzIToXtTrtThSIlJCw%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword=';
         url = url + kw + '&_type=json';
+        //let apiservicekey = ' ' ; api가져올때 주소 끊어서 변수 만듬 ,(servicekey)
         //fetch()
         fetch(url)
             .then((resp) => resp.json())
@@ -44,8 +47,9 @@ const Gallary = () => {
                         <button onClick={() => resetItem()} className={style.but}>취소</button>
                     </div>
                 </div>
+                {gList && <GallaryList gList={gList} setgList={setgList} />}
             </article>
-            {gList && <GallaryList gList={gList} setgList={setgList} />}
+          
         </main>
     );
 }
