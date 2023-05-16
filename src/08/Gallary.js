@@ -36,12 +36,12 @@ const Gallary = () => {
     return (
         <main className="container">
             <article>
-                <h1>한국관광공사 관광사진 정보</h1>
+                <h1 className={style.h1}>한국관광공사 관광사진 정보</h1>
                 <div className="grid">
                     <input type="text" ref={txt} id="txt1" name="txt1" placeholder="키워드를 입력하세요." required />
-                    <div className={style.but}>
-                        <button onClick={(e) => showImg(e)}>등록</button>
-                        <button onClick={() => resetItem()}>취소</button>
+                    <div>
+                        <button onClick={(e) => showImg(e)} className={style.but}>등록</button>
+                        <button onClick={() => resetItem()} className={style.but}>취소</button>
                     </div>
                 </div>
             </article>
