@@ -1,24 +1,28 @@
 //import Myref from './07/Myref';
 //import Gallary from './08/Gallary';
+import Fcst from './10/Fcst';
 import './App.css';
 //import Hello from './01/Hello'; //파일에 있는 태그를 실행할 거임 
 //import MyClock from './02/MyClock';
- import Box from './03/Box';
+ //import Box from './03/Box';
 //import method from 'path';
 //import MyDiv from './04/MyDiv';
 //import Taccident from './06/Taccident';
 //import Frcst from './05/Frcst';
+//import RouteMain from './09/RouteMain';
 
 function App() {
   return (
    // <Hello/>
    //<MyClock/>
-   <Box />
+   //<Box />
    //<MyDiv/>
   // <Frcst/>
   //<Taccident/>
   //<Myref />
   //<Gallary/>
+  //<RouteMain/>
+  <Fcst/>
   );
 }
 
