@@ -7,6 +7,7 @@ import data from "./getcode.json";
 const UltraSrtFcst = () => {
 
     const [Fcst, setFcst] = useState([]); //초기값을 빈배열로 설정해줌
+    const [tags, setTags] = useState([]); //filter한 tagarr 배열 
 
     const dat = useParams().dt;
     const x = useParams().x;
@@ -16,8 +17,8 @@ const UltraSrtFcst = () => {
     //입력값을 가져오기 위한 ref 변수
     const cat = useRef();
 
-    //fsct 넣어줄 빈 배열 하나 만듦
-
+    
+    //fetch해서 openAPI 가져오기
     useEffect(() => {
         let url = 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=2cTsIbMSNEakGj3HNSZtwQLbXXeuyM8AuaNHrr3dKA3L5Xi5w%2F0U6Rs3CwSIjl0DbsffGzIToXtTrtThSIlJCw%3D%3D';
         url = url + '&pageNo=1';
@@ -42,40 +43,33 @@ const UltraSrtFcst = () => {
     }, [Fcst])
 
     //항목명 option category
-    let temp = data.filter((item)=>item.예보구분==="초단기예보");
-    console.log(temp);
+    let temp = data.filter((item) => item.예보구분 === "초단기예보"); //.filter()
+    console.log('temp = ', temp);
     let cate = temp.map((item) =>
-        <option value={item.예보구분} key={item.예보구분+item.항목값}>
+        <option value={item.항목값} key={item.항목명}>
             {item.항목명 + '(' + item.항목값 + ')'}
-        </option>);
+        </option>); //filter해서 가져온 temp array를 map으로 돌려서 해당 값 가져오기
+    console.log('cate = ', cate);
 
-
-    // for (let row of category) {
-
-    //     tags.push(
-    //         <table>
-    //             <tbody>
-    //                 <tr>
-    //                     <td>{row.category}</td>
-    //                     <td>{row.fcstDate}</td>
-    //                     <td>{row.fcstTime}</td>
-    //                     <td>{row.fcstValue}</td>
-    //                 </tr>
-    //             </tbody>
-    //         </table>
-    //     )
-    // }
-    console.log(Fcst);
+    //clickBt() 만들기 
+   
+    const clickBt = () => {
+        //console.log(cat.current.value);
+        let tagarr = Fcst.filter((item) => item.category === cat.current.value);
+        setTags(tagarr);
+        //console.log('tags = ', tags);  
+    }
 
     return (<article>
         <div className="grid">
             <h5>{`${area} 초단기예보(${dat})`}</h5>
-            <select id="cat" ref={cat} required defaultValue=''>
+            <select id="cat" ref={cat} required defaultValue='' onChange={() => clickBt()}>
                 <option value='' >선택</option>
                 {cate}
             </select>
         </div>
-        <FcstTable />
+        {tags && <FcstTable tags={tags} cat={cat}/>}
+       
     </article>);
 }
 export default UltraSrtFcst;
