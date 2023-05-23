@@ -49,8 +49,8 @@ const FcstMain = () => {
             <header><h1>단기예보 선택</h1></header>
             <form className="grid">
                 <input type="date" ref={date} id="dt1" name="dt1" className="date" onChange={() => getDt()} />
-                <select id="city" ref={city} onChange={() => getCt()} required>
-                    <option value='' selected>선택</option>
+                <select id="city" ref={city} onChange={() => getCt()} required defaultValue=''>
+                    <option value='' >선택</option>
                     {category}
                 </select>
             </form>

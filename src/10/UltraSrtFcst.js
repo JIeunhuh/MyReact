@@ -41,8 +41,11 @@ const UltraSrtFcst = () => {
 
     }, [Fcst])
 
-    let cate = data.map((item) =>
-        <option value={item.예보구분} key={item.예보구분}>
+    //항목명 option category
+    let temp = data.filter((item)=>item.예보구분==="초단기예보");
+    console.log(temp);
+    let cate = temp.map((item) =>
+        <option value={item.예보구분} key={item.예보구분+item.항목값}>
             {item.항목명 + '(' + item.항목값 + ')'}
         </option>);
 
@@ -67,8 +70,8 @@ const UltraSrtFcst = () => {
     return (<article>
         <div className="grid">
             <h5>{`${area} 초단기예보(${dat})`}</h5>
-            <select id="cat" ref={cat} required>
-                <option value='' selected>선택</option>
+            <select id="cat" ref={cat} required defaultValue=''>
+                <option value='' >선택</option>
                 {cate}
             </select>
         </div>
