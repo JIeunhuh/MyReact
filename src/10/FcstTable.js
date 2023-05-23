@@ -1,4 +1,4 @@
-
+import data from './getcode.json';
 const FcstTable = ({ tags}) => {
     console.log(tags);
     //console.log(tags1);
