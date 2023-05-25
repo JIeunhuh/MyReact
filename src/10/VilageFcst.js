@@ -12,6 +12,7 @@ const VilageFcst = () => {
 
     const [fcst, setFcst] = useState([]);
     const [tags, setTags] = useState([]);
+    const [cats,setCats]=useState([]);
 
     //입력값을 가져오기 위한 ref 변수
     const cat = useRef();
@@ -33,13 +34,13 @@ const VilageFcst = () => {
 
     }, [])
 
-    useEffect(() => {
-        console.log(fcst);
-    }, [fcst])
+    // useEffect(() => {
+    //     console.log(fcst);
+    // }, [fcst])
 
     let temp = data.filter((item) => item.예보구분 === "단기예보");
     let cate = temp.map((item) =>
-        <option value={item.항목값} key={item.예보구분 + item.항목값}>
+        <option value={item.항목값} key={item.항목명}>
             {item.항목명 + '(' + item.항목값 + ')'}
         </option>);
 
@@ -47,6 +48,9 @@ const VilageFcst = () => {
     const clickBt = () => {
         console.log(cat.current.value);
         let tagarr = fcst.filter((item) => item.category === cat.current.value);
+        let cate = temp.filter((i)=>i.예보구분==="단기예보" && i.항목값===cat.current.value);
+        cate = cate[0];
+        setCats(cate);
         setTags(tagarr);
         //console.log('tagarr ',tagarr);
     }
@@ -59,7 +63,7 @@ const VilageFcst = () => {
                     {cate}
                 </select>
             </div>
-            {tags && <FcstTable tags={tags} />}
+            {tags && <FcstTable tags={tags} cats={cats} />}
         </article>);
 }
 export default VilageFcst;

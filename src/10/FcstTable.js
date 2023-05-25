@@ -1,39 +1,28 @@
-import data from './getcode.json';
-const FcstTable = ({ tags}) => {
+//import data from './getcode.json';
+//import { useRef } from 'react';
+const FcstTable = ({ tags ,cats}) => {
     console.log(tags);
+   // const cate = useRef(cat);
     //console.log(tags1);
 
     //초단기예보
     let tag1 = [];
     for (let row of tags) {
-
+      let skyc = {'1' : '🌞' , '3':'⛅','4':'☁'};
+      console.log(cats);
         tag1.push(
             <tbody>
-                <tr>
-                    <td>{row.category}</td>
+                <tr key={row.category + row.fcstDate}>
+                    <td>{cats.항목명}</td>
                     <td>{row.fcstDate}</td>
-                    <td>{row.fcstTime}</td>
-                    <td>{row.fcstValue}</td>
+                    <td>{row.fcstTime}</td>  
+                    { (row.category === 'SKY') ? <td>{skyc[row.fcstValue]}</td> : <td>{row.fcstValue}{cats.단위}</td> } 
                 </tr>
             </tbody>
         )
     }
 
-    //단기예보
-    // let tag2 = [];
-    // for (let row of tags1) {
-    //     tag2.push(
-    //         <tbody>
-    //             <tr>
-    //                 <td>{row.category}</td>
-    //                 <td>{row.fcstDate}</td>
-    //                 <td>{row.fcstTime}</td>
-    //                 <td>{row.fcstValue}</td>
-    //             </tr>
-    //         </tbody>
-    //     )
-    // }
-
+   
     return (
         <table>
             <thead>

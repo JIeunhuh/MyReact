@@ -8,6 +8,7 @@ const UltraSrtFcst = () => {
 
     const [Fcst, setFcst] = useState([]); //초기값을 빈배열로 설정해줌
     const [tags, setTags] = useState([]); //filter한 tagarr 배열 
+    const[cats,setCats]=useState([]);
 
     const dat = useParams().dt;
     const x = useParams().x;
@@ -46,16 +47,19 @@ const UltraSrtFcst = () => {
     let temp = data.filter((item) => item.예보구분 === "초단기예보"); //.filter()
     console.log('temp = ', temp);
     let cate = temp.map((item) =>
-        <option value={item.항목값} key={item.항목명}>
+        <option value={item.항목값 } key={item.항목값}>
             {item.항목명 + '(' + item.항목값 + ')'}
         </option>); //filter해서 가져온 temp array를 map으로 돌려서 해당 값 가져오기
-    console.log('cate = ', cate);
+   // console.log('cate = ', cate);
 
     //clickBt() 만들기 
    
     const clickBt = () => {
-        //console.log(cat.current.value);
+     //   console.log("cat key = ",cat.current.value);
         let tagarr = Fcst.filter((item) => item.category === cat.current.value);
+        let cate = temp.filter((i)=>i.예보구분==="초단기예보" && i.항목값===cat.current.value);
+        cate = cate[0];
+        setCats(cate);
         setTags(tagarr);
         //console.log('tags = ', tags);  
     }
@@ -68,7 +72,7 @@ const UltraSrtFcst = () => {
                 {cate}
             </select>
         </div>
-        {tags && <FcstTable tags={tags} cat={cat}/>}
+        {tags && <FcstTable tags={tags} cats={cats}/>}
        
     </article>);
 }
