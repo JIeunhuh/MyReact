@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import data from "./getxy.json";
+import { getRoles } from "@testing-library/react";
 const FcstMain = () => {
     // const [fcst1, setFcst1] = useState();
     // const [fcst2, setFcst2] = useState();
@@ -56,7 +57,7 @@ const FcstMain = () => {
             </form>
 
             <div className="grid">
-                <button><Link to={`/ultra/${dat}/${area}/${x}/${y}`}  dat={dat} area={area} x={x} y={y} >초단기예보</Link></button>
+                <Link to={`/ultra/${dat}/${area}/${x}/${y}` } role='button'>초단기예보</Link>
                 <button><Link to={`/vilage/${dat}/${area}/${x}/${y}`}>단기예보</Link></button>
             </div>
 

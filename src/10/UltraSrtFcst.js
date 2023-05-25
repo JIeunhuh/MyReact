@@ -56,11 +56,11 @@ const UltraSrtFcst = () => {
    
     const clickBt = () => {
      //   console.log("cat key = ",cat.current.value);
-        let tagarr = Fcst.filter((item) => item.category === cat.current.value);
-        let cate = temp.filter((i)=>i.예보구분==="초단기예보" && i.항목값===cat.current.value);
+        let tagarr = Fcst.filter((item) => item.category === cat.current.value); //item.category와 cat의 current.value가 같은거 .filter로 해서 가져오기  
+        let cate = temp.filter((i)=>i.예보구분==="초단기예보" && i.항목값===cat.current.value); //초단기예보의 항목값과 cat의 current.value가 같은거 가져오기
         cate = cate[0];
-        setCats(cate);
-        setTags(tagarr);
+        setCats(cate);//useState변수 사용
+        setTags(tagarr);//useState변수 사용
         //console.log('tags = ', tags);  
     }
 
