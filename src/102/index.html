@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        const show=()=>{
+            var kn = form1.txt1.value;
+            console.log(kn);
+            alert(kn+"님, 안녕하세요");
+        };
+    </script>
+    <title>날씨예보</title>
+</head>
+<body>
+    <h1>단기예보</h1>
+    <ul>
+        <li>강수확률(POP) "%"</li>
+        <li>강수형태(PTY) "%"</li>
+        <li>1시간 강수량(PCP) "%"</li>
+    </ul>
+
+    <h1>초단기예보</h1>
+    <form method="post" action="a.html" name="form1">
+        선택 : <input type="text" name="txt1">
+        <input type="button" value="확인" onclick="show()">
+        <option value="city" id="city">
+            <select value=" ">선택</select>
+        </option>
+    </form>
+    <ul>
+        <li>강수확률(POP) "%"</li>
+        <li>강수형태(PTY) "%"</li>
+        <li>1시간 강수량(PCP) "%"</li>
+    </ul>
+    
+</body>
+</html>
