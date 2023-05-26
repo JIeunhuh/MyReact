@@ -57,8 +57,8 @@ const FcstMain = () => {
             </form>
 
             <div className="grid">
-                <Link to={`/ultra/${dat}/${area}/${x}/${y}` } role='button'>초단기예보</Link>
-                <button><Link to={`/vilage/${dat}/${area}/${x}/${y}`}>단기예보</Link></button>
+                <Link to={`/ultra/${dat}/${area}/${x}/${y}` } role="button">초단기예보</Link>
+               <Link to={`/vilage/${dat}/${area}/${x}/${y}`} role="button">단기예보</Link>
             </div>
 
         </article>);
