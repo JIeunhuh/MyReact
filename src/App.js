@@ -10,6 +10,7 @@ import './App.css';
 //import Taccident from './06/Taccident';
 //import Frcst from './05/Frcst';
 //import RouteMain from './09/RouteMain';
+import CodeGubun from './102/CodeGubun';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
   //<Myref />
   //<Gallary/>
   //<RouteMain/>
-  <Fcst/>
+ // <Fcst/>
+  <CodeGubun/>
   );
 }
 
